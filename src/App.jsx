@@ -44,9 +44,25 @@ export default function App() {
     setActiveTab('table');
   };
 
+  const fillTestData = () => {
+    setRows([
+      { id: Date.now() + 1, from: '/old-blog/seo-tips-2024', to: '/blog/seo-tips', type: '301' },
+      { id: Date.now() + 2, from: '/products/widget-pro', to: '/shop/widget-pro-v2', type: '301' },
+      { id: Date.now() + 3, from: '/about-us', to: '/company/about', type: '301' },
+      { id: Date.now() + 4, from: '/services/consulting', to: '/solutions/consulting', type: '301' },
+      { id: Date.now() + 5, from: '/landing/summer-sale', to: '/promotions/seasonal', type: '302' },
+      { id: Date.now() + 6, from: '/docs/api-v1', to: '/developers/api/v2', type: '301' },
+      { id: Date.now() + 7, from: '/team/john-smith', to: '/company/team#john-smith', type: '301' },
+      { id: Date.now() + 8, from: '/category/tutorials', to: '/learn/tutorials', type: '301' },
+      { id: Date.now() + 9, from: '/temp/maintenance', to: '/status', type: '302' },
+      { id: Date.now() + 10, from: '/contact-us', to: '/support/contact', type: '301' },
+    ]);
+    setActiveTab('table');
+  };
+
   return (
     <div className="min-h-screen bg-abyss text-white bg-glow bg-grid">
-      <div className="max-w-6xl mx-auto px-4 py-12 relative z-10 animate-fadeIn">
+      <div className="max-w-[1600px] mx-auto px-4 py-12 relative z-10 animate-fadeIn">
 
         {/* Breadcrumb */}
         <nav className="mb-8 text-sm text-galactic">
@@ -69,6 +85,13 @@ export default function App() {
           <p className="text-lg text-cloudy max-w-2xl">
             Build your redirect map and export it in the format your server needs — .htaccess, Nginx, Cloudflare, CSV, or JSON. Detects redirect chains and duplicate sources automatically.
           </p>
+        </div>
+
+        {/* Fill Test Data */}
+        <div className="flex justify-end mb-4">
+          <button type="button" onClick={fillTestData}
+            className="px-3 py-1.5 text-xs font-mono bg-prince/20 text-prince border border-prince/30 rounded hover:bg-prince/30 transition-colors focus:outline-none focus:ring-2 focus:ring-prince focus:ring-offset-2 focus:ring-offset-abyss"
+          >Fill Test Data</button>
         </div>
 
         {/* Stats + Tabs */}
@@ -143,7 +166,7 @@ export default function App() {
 
       {/* Footer */}
       <footer className="border-t border-metal/30 mt-16">
-        <div className="max-w-6xl mx-auto px-4 py-6">
+        <div className="max-w-[1600px] mx-auto px-4 py-6">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-galactic">
             <p>Free Redirect Map Builder — DreamHost Marketing Tools</p>
             <div className="flex items-center gap-4">
